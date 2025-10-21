@@ -1,0 +1,22 @@
+# 1. Arquivos de Sistema Operacional (Windows)
+# Arquivos de cache e metadados gerados pelo Windows
+Thumbs.db
+ehthumbs.db
+desktop.ini
+$RECYCLE.BIN/
+
+# 2. Arquivos de Cache e Configurações de Editores
+.vscode/
+# Arquivos de projetos e workspaces do Sublime Text, Atom, etc.
+*.sublime-project
+*.sublime-workspace
+*.code-workspace
+
+# Pastas onde o código é 'buildado' para produção
+/dist
+/build
+
+# 4. Arquivos Temporários de Backup
+# Arquivos de backup criados por alguns editores (*~ é padrão Linux/Unix, mas bom ter
+*~
+*.bak

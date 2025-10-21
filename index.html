@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paloma Flores - Portfólio</title>
+    <link rel="stylesheet" href="style.css">
+    </head>
+<body>
+
+    <header id="navbar">
+    <nav id="nav-menu">
+        <ul>
+            <li><a href="#sobre-mim" class="scroll-link">Sobre Mim</a></li>
+            <li><a href="#academico" class="scroll-link">Formação</a></li>
+            <li><a href="#projetos" class="scroll-link">Portfólio</a></li>
+            <li><a href="#contato" class="scroll-link">Contato</a></li>
+        </ul>
+    </nav>
+    
+    <div class="toggle-buttons-container">
+        <button id="menu-toggle" aria-label="Abrir Menu">
+            ☰
+        </button>
+        <button id="mode-toggle" title="Alternar Modo Claro/Escuro">
+            ☀️
+        </button>
+    </div>
+    </header>
+
+    <section id="sobre-mim" class="section bg-light">
+    <div class="container">
+        <h1>Sobre Mim</h1>
+        
+        <div class="about-flex-container">
+            
+            <div class="about-image-side">
+                <img src="./img//frieren5.png" alt="Foto de Perfil" class="profile-photo">
+            </div>
+
+            <div class="tabs-estrutura">
+
+                <div class="tabs-container">
+                    <button class="tab-button active" onclick="openTab(event, 'perfil')"> Apresentação</button>
+                    <button class="tab-button" onclick="openTab(event, 'formacao')"> Hard Skills</button>
+                    <button class="tab-button" onclick="openTab(event, 'hobbies')"> Meus Hobbies</button>
+                    <button class="tab-button" onclick="openTab(event, 'contato-aba')"> Redes Sociais</button>
+                </div>
+
+                <div class="tabs-content-area">
+
+                    <div id="perfil" class="tab-content active">
+                        <h3>Apresentação</h3>
+                        <p>Olá, meu nome é Paloma Flores e tenho 24 anos. Interesse em Desenvolvimento de Software, Análise de Dados e Cloud Computing.</p>
+                        <p>Busco minha primeira oportunidade na área tech, onde possa aplicar meus conhecimentos em Python, banco de dados e sistemas eficientes
+                            voltados à experiência do usuário.</p>
+                        <br>
+                        <p>Sou estudante de Engenharia de Software com experiência prática em desenvolvimento back-end. Dedico-me a desenvolver lógica de programação, boas práticas de código e fundamentos de cloud computing.
+                        Além de expl orar ferramentas de análise de dados e visualização, como Power BI, que me ajudam a transformar informações em insights úteis.</p>
+                    </div>
+
+                    <div id="formacao" class="tab-content">
+                        <h3>Hard Skills</h3>  
+                        <ul>
+                            <li><b>Linguagens de Programação:</b> Python, C e C++</li>
+                            <li><b>Análise de dados:</b> SQL, MySQL, Power BI</li>
+                            <li><b>Versionamento de Código:</b>VS Code, Git, GitHub</li>
+                            <li><b>Computação em nuvem:</b> Fundamentos de cloud (Oracle e AWS)</li>             
+                        </ul>                                              
+            
+                    </div>
+
+                    <div id="hobbies" class="tab-content">
+                        <h3>Meus Hobbies</h3>
+                        <ul>
+                            <li><b>Idiomas:</b> Tenho muito interesse em aprender idiomas Me dedido ao aprendizado dos idiomas: espanhol, inglês, francês e italiano.</li>
+                            <br>
+                            <li><b>Esportes:</b> Em meu tempo livre gosto de praticar atividades físicas, como natação e corrida, que ajudam a desenvolver meu foco e disciplina.</li>
+                            <br>
+                            <li><b>Outros:</b> Por outro lado, também gosto de desenhar, o que me permite canalizar minha criatidade e atenção a detalhes e assistir documentários de diversos assuntos, eles são uma forma contínua de expandir meu conhecimento.</li>     
+                        </ul>          
+                    </div>
+
+                    <div id="contato-aba" class="tab-content">
+                        <h3>Vamos nos conectar!</h3>
+                        <p>Você pode conhecer mais sobre minha trajetória e projetos nos links abaixo:</p>
+                        <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/paloma-floresm/" target="_blank" class="contact-link">Paloma Flores</a>
+                        <br>
+                        <strong>GitHub:</strong> <a href="https://github.com/palomaflores" target="_blank" class="contact-link">palomaflores</a>
+                    </div>
+                </div>
+            </div>            
+        </div>
+    </div>
+</section>
+            
+
+    <section id="academico" class="section">
+        <div class="container">
+            <h1>Formação & Habilidades</h1>
+            
+            <div class="academic-item">
+                <h3>FORMAÇÃO ACADÊMICA</h3>
+                <h4>UNINTER (Centro Universitário Internacional)</h4>
+                <p>Bacharelado em Engenharia, Engenharia de Software</p>                            
+            </div>
+            
+            <div class="academic-item">
+                <h3>CURSOS E CERTIFICADOS</h3>
+                <h4>Algoritmos e Lógica de Programação - O Curso COMPLETO</h4>
+                <p>Udemy, 2025</p>
+                <p>Habilidades: Lógica de Programação, C, C++, Java, C#, e Python</p>
+                <br>
+                
+                <h4>Microsft Excel</h4>
+                <p>Fundação Bradesco, 2025</p>
+                <p>Habilidades:  Importação de dados; Solver; Funções e banco de Dados</p>
+                <br>            
+                <h4>Teste de Software</h4>
+                <p>Instituto Matera, 2025</p>
+                <p>Habilidades: Teste de Software; Planejamento de Teste</p>
+            </div>
+
+            <div class="academic-item">
+                <h3>IDIOMAS</h3>
+                <h4>Português</h4>
+                    <p> Fluente ou Nativo</p>
+                <br>
+                <h4>Espanhol</h4>
+                    <p>Nível Intermediário</p>
+                <br>
+                <h4>Inglês</h4>
+                    <p> Nível Básico></p>                        
+            </div>
+
+        </div>
+    </section>
+
+    <section id="projetos" class="section bg-light">
+        <div class="container">
+            <h1>Projetos de Destaque</h1>
+            <div class="projects-grid">
+                
+                <a href="https://github.com/palomaflores/calculadora-imc" class="project-card">
+                    <h3>Calculadora de IMC em Python com Histórico (CSV)o</h3>
+                    <p>Calculadora de IMC simples em Python que implementa a fórmula padrão da OM
+                        S. Salva o histórico de resultados em um arquivo JSON para persistência de dados.</p>
+                </a>
+
+                <a href="https://github.com/palomaflores/gerador-senha-segura" class="project-card">
+                    <h3>Gerador de Senhas Seguras em Python</h3>
+                    <p>Ferramenta simples em Python para gerar senhas aleatórias e de alta entropia. 
+                        O script permite configurar o tamanho da senha e quais tipos de caracteres 
+                        (símbolos, números, letras) devem ser incluídos, garantindo máxima segurança.</p>
+                </a>
+
+                <a href="https://github.com/palomaflores/myanimelist-consulta" class="project-card">
+                    <h3>Landing Page de SaaS</h3>
+                    <p>Ferramenta de consulta rápida desenvolvida em Python 3.x para interagir com o endpoint /anime da Jikan API. O foco é na comunicação cliente-servidor, validação de resposta HTTP e exibição organizada de informações extraídas de JSON complexo diretamente no terminal.</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="contato" class="section">
+        <div class="container contact-container">
+            <h1>Entre em Contato</h1>
+            <form id="contact-form">
+                <div class="form-group">
+                    <label for="name">Nome:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Mensagem:</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit">Enviar</button>
+                <p class="form-note">Envie uma mensagem</p>
+            </form>
+        </div>
+    </section>
+    
+    <footer style="background-color: #000000; color: white; text-align: center; padding: 0.2px; font-size: 0.9em;">
+        <div class="container">
+            <p>&copy; 2025 Paloma Flores. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

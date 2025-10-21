@@ -1,0 +1,460 @@
+/* --- 1. DEFINIÇÃO DAS VARIÁVEIS DE CORES --- */
+:root {
+    /* Modo Escuro (Dark Mode - Padrão) */
+    --azul-fundo: #031A39; 
+    --azul-secundario: #585a5e; 
+    --azul-destaque: #4a7abf; 
+    --roxo-destaque: #0059ff; 
+    --azul-hover: #0059ff; 
+    --menu-bg-rgba: rgba(3, 26, 57, 0.8); 
+    --texto-principal: #fcfcfc; 
+    --texto-secundario: #9b9c9c;
+    --sombra-principal: rgba(39, 36, 36, 0.8);
+}
+
+/* --- MODO CLARO --- */
+.light-mode {
+    --azul-fundo: #2459a1; 
+    --azul-secundario: #2459a1; 
+    --azul-destaque: #031A39; 
+    --roxo-destaque: #013877; 
+    --azul-hover: #013877; 
+    --menu-bg-rgba: rgba(147, 188, 243, 0.9);
+    --texto-principal: #fcfcfc; 
+    --texto-secundario: #c1c2c4; 
+    --sombra-principal: rgba(0, 0, 0, 0.2); 
+}
+
+
+/* --- 2. RESET E ESTRUTURA --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.5;
+    background-color: var(--azul-fundo); 
+    color: var(--texto-principal);
+    transition: background-color 0.5s;
+}
+
+.container {
+    width: 80%;
+    max-width: 1200px;
+    margin: auto;
+    overflow: hidden;
+    padding: 20px 0;
+}
+
+/* --- 3. MENU FIXO COM EFEITO VIDRO E ALINHAMENTO FLEXBOX --- */
+#navbar {
+    position: fixed; 
+    top: 0;
+    width: 100%;
+    height: 60px;
+    background: var(--menu-bg-rgba); 
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px); 
+    z-index: 1000; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    
+    /* Configuração Flexbox para centralizar tudo */
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 0 20px; 
+}
+
+/* Container que envolve apenas os links */
+#navbar nav {
+    flex-grow: 1; 
+}
+
+#navbar nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+#navbar nav ul li {
+    margin: 0 20px;
+}
+
+#navbar nav ul li a {
+    color: var(--texto-principal);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+#navbar nav ul li a:hover {
+    color: #0356c4;
+}
+
+/* Container para agrupar os botões */
+.toggle-buttons-container {
+    display: flex;
+    align-items: center; 
+    gap: 15px; 
+}
+
+/* Botão Mode-Toggle */
+#mode-toggle {
+    background: transparent;
+    border: none; 
+    color: var(--azul-destaque);
+    padding: 8px; 
+    cursor: pointer;
+    border-radius: 50%;
+    font-size: 1.2em;
+    line-height: 1;
+    transition: background-color 0.3s, color 0.3s;
+    z-index: 1001;
+}
+
+/* Botão Hamburger (Menu Toggle) */
+#menu-toggle {
+    display: none; /* Escondido por padrão em desktop */
+    background: transparent;
+    border: none;
+    color: var(--texto-principal);
+    font-size: 1.5em;
+    cursor: pointer;
+    z-index: 1001; 
+    transition: color 0.3s ease;
+}
+
+#menu-toggle:hover {
+    color: var(--azul-hover);
+}
+
+
+/* --- 4. ESTILO DAS SEÇÕES E TÍTULOS --- */
+.section {
+    padding: 100px 0 50px; 
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+h1, h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: 0059ff;
+}
+
+/* --- 5. SOBRE MIM --- */
+.about-flex-container { 
+    display: flex;
+    align-items: flex-start; 
+    gap: 60px;
+    padding-top: 50px;
+    
+    justify-content: center; 
+}
+
+.about-image-side {
+    flex: 1.5; 
+    text-align: center;
+}
+
+.profile-photo {
+    width: 350px;
+    height: 350px;
+    border-radius: 50%; 
+    object-fit: cover;
+    box-shadow: 0 0 0 5px var(--roxo-destaque); 
+}
+
+.tabs-estrutura { 
+    flex: 3;
+}
+
+/* Estilo do contêiner dos botões da aba */
+.tabs-container {
+    display: flex;
+    justify-content: space-between; 
+    margin-bottom: 25px;
+    gap: 10px;
+}
+
+.tab-button {
+    flex-grow: 1;
+    padding: 12px;
+    background: transparent;
+    border: 1px solid var(--azul-destaque);
+    color: var(--azul-destaque);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+    font-weight: bold;
+    font-size: 1em;
+}
+
+.tab-button:hover {
+    background: rgba(74, 122, 191, 0.2);
+}
+
+.tab-button.active {
+    background: var(--azul-destaque); 
+    color: var(--azul-fundo); 
+    border-color: var(--azul-destaque);
+}
+
+/* --- ESTILO DA CAIXA DE CONTEÚDO (GLASSMORPHISM) --- */
+.tabs-content-area {
+    background: rgba(30, 41, 59, 0.15); 
+    backdrop-filter: blur(6px); 
+    -webkit-backdrop-filter: blur(6px); 
+    padding: 25px;
+    border-radius: 10px;
+    min-height: 250px; 
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.tab-content {
+    display: none;
+    line-height: 1.6;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.tab-content h3 {
+    color: var(--roxo-destaque);
+    text-align: left;
+    margin-bottom: 15px;
+}
+
+
+/* --- 6. SEÇÃO ACADÊMICO (Cards com Glassmorphism) --- */
+.academic-item {
+    background: rgba(30, 41, 59, 0.2); 
+    backdrop-filter: blur(8px); 
+    -webkit-backdrop-filter: blur(8px); 
+    color: var(--texto-principal);
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 15px;
+    border-left: 5px solid var(--azul-destaque);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.academic-item h3 {
+    margin-bottom: 5px;
+    color: var(--azul-destaque);
+}
+
+
+/* --- 7. SEÇÃO PROJETOS (Cards) --- */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.project-card {
+    background: rgba(30, 41, 59, 0.2); 
+    backdrop-filter: blur(4px); 
+    -webkit-backdrop-filter: blur(4px);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    text-decoration: none; 
+    color: var(--texto-principal);
+    display: block; 
+    border-top: 5px solid var(--azul-destaque);
+}
+
+.project-card:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+    border-top-color: var(--azul-hover); 
+}
+
+.project-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.project-card h3 {
+    padding: 15px 15px 0;
+    color: var(--azul-destaque);
+    text-align: left;
+}
+
+.project-card p {
+    padding: 0 15px 15px;
+    font-size: 0.9em;
+}
+
+/* --- 8. SEÇÃO CONTATO (Formulário com Glassmorphism) --- */
+.contact-container {
+    max-width: 600px;
+    padding-top: 50px;
+}
+
+#contact-form {
+    background: rgba(30, 41, 59, 0.2); 
+    backdrop-filter: blur(8px); 
+    -webkit-backdrop-filter: blur(8px); 
+    padding: 40px; 
+    border-radius: 12px; 
+    box-shadow: 0 10px 25px var(--sombra-principal);
+    border: 1px solid rgba(255, 255, 255, 0.1); 
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: var(--azul-destaque);
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    background-color: var(--azul-fundo); 
+    color: var(--texto-principal);
+    border: 1px solid rgba(255, 255, 255, 0.2); 
+    border-radius: 4px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--azul-destaque);
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(74, 122, 191, 0.4);
+}
+
+button[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    background: #4a7abf;
+    color: rgb(253, 249, 249);
+    border: none;
+    border-radius: 4px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background: var(--azul-hover); 
+}
+.form-note {
+    margin-top: 15px;
+    font-size: 0.8em;
+    color: var(--texto-secundario);
+    text-align: center;
+}
+
+/* --- 9. RESPONSIVIDADE (MEDIA QUERIES) --- */
+
+/* Regras aplicadas APENAS em telas com largura máxima de 768px (Mobile/Tablet) */
+@media (max-width: 768px) {
+    
+    .container {
+        width: 90%; 
+    }
+
+    /* CORREÇÃO DE ESPAÇAMENTO DA SEÇÃO */
+    .section {
+        padding: 80px 0 50px; 
+        min-height: auto;
+    }
+
+    /* *** Correção Definitiva para a Foto *** Garantimos que a seção tenha padding e que a altura da foto seja adaptável 
+    */
+    #sobre-mim {
+        padding-top: 80px; 
+        padding-bottom: 50px;
+        min-height: auto;
+    }
+    
+    /* 1. MOSTRA O BOTÃO HAMBURGUER */
+    #menu-toggle {
+        display: block; 
+    }
+
+    /* 2. MENU RESPONSIVO */
+    #navbar nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh; 
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.4s ease, visibility 0.4s ease;
+        pointer-events: none;
+        background: var(--menu-bg-rgba); 
+        z-index: 999; 
+    }
+
+    #navbar nav.active {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+    }
+    
+    #navbar nav ul {
+        flex-direction: column; 
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        padding: 60px 0 0; 
+    }
+
+    #navbar nav ul li {
+        margin: 20px 0;
+        font-size: 1.2em;
+    }
+
+    /* 3. LAYOUT DA SEÇÃO SOBRE MIM (CORREÇÃO FINAL DO CORTE DA FOTO) */
+    .about-flex-container {
+        flex-direction: column; 
+        text-align: center;
+        align-items: center; 
+        /* Adiciona padding interno para garantir o espaço */
+        padding: 30px 0; 
+        gap: 30px; 
+    }
+    
+    .profile-photo {
+        /* Tamanho fixo, mas altura automática para proporção correta */
+        width: 200px; 
+        height: auto; /* A chave para evitar o esmagamento */
+        max-width: 100%; 
+        /* Zera margens problemáticas */
+        margin: 0;
+    }
+
+    /* Faz os botões da aba ficarem empilhados */
+    .tabs-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    /* Ajustes para a grid de projetos */
+    .projects-grid {
+        grid-template-columns: 1fr; 
+    }
+}
