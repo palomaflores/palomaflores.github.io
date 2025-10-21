@@ -16,7 +16,7 @@
 .light-mode {
     --azul-fundo: #2459a1; 
     --azul-secundario: #2459a1; 
-    --azul-destaque: #031A39; 
+    --azul-destaque: #3d8df5; 
     --roxo-destaque: #013877; 
     --azul-hover: #013877; 
     --menu-bg-rgba: rgba(147, 188, 243, 0.9);
@@ -89,11 +89,11 @@ body {
     color: var(--texto-principal);
     text-decoration: none;
     font-weight: bold;
-    transition: color 0.3s ease;
+    transition: color 0.3s ease; 
 }
 
 #navbar nav ul li a:hover {
-    color: #0356c4;
+    color: #3d8df5;
 }
 
 /* Container para agrupar os botões */
@@ -168,7 +168,7 @@ h1, h2 {
     height: 350px;
     border-radius: 50%; 
     object-fit: cover;
-    box-shadow: 0 0 0 5px var(--roxo-destaque); 
+    box-shadow: 0 0 0 2px var(--roxo-destaque); 
 }
 
 .tabs-estrutura { 
@@ -228,7 +228,7 @@ h1, h2 {
 }
 
 .tab-content h3 {
-    color: var(--roxo-destaque);
+    color: #3d8df5;
     text-align: left;
     margin-bottom: 15px;
 }
